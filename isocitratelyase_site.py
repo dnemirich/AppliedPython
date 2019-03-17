@@ -7,3 +7,5 @@ with open('P28240(ACEA_YEAST).txt', 'r') as file:  # fasta is from uniprot
     match = re.search(site, fasta)
     print("""Isocitrate lyase (P28240) contains its active site (PS00161) \
 starting from %s-th position: %s.""" % (match.start(), match.group()))
+
+# need to add 3 letters before and after a match
