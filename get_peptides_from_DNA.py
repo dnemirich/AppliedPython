@@ -3,16 +3,6 @@ from Bio.Seq import Seq
 from Bio.Alphabet import IUPAC
 
 
-def translation(messenger_rna):
-    global peptides
-    peptides = []
-    start = messenger_rna.find('AUG')
-    if messenger_rna.find('AUG') != -1:
-        peptide = messenger_rna[start:].translate(to_stop=True)
-        peptides.append(peptide)
-    mito_translation(messenger_rna)
-
-
 def mito_translation(messenger_rna):
     start = messenger_rna.find('AUG')
     alt_start = messenger_rna.find('AUA')
@@ -26,6 +16,16 @@ def mito_translation(messenger_rna):
     peptides_list = sorted(peptides, key=len)
     for peptide in peptides_list:
         print(peptide)
+
+
+def translation(messenger_rna):
+    global peptides
+    peptides = []
+    start = messenger_rna.find('AUG')
+    if messenger_rna.find('AUG') != -1:
+        peptide = messenger_rna[start:].translate(to_stop=True)
+        peptides.append(peptide)
+    mito_translation(messenger_rna)
 
 
 def transcription(my_seq):
