@@ -10,7 +10,7 @@ def translation(messenger_rna):
     if messenger_rna.find('AUG') != -1:
         peptide = messenger_rna[start:].translate(to_stop=True)
         peptides.append(peptide)
-        mito_translation(messenger_rna)
+    mito_translation(messenger_rna)
 
 
 def mito_translation(messenger_rna):
