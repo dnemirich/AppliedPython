@@ -20,7 +20,8 @@ def mito_translation(messenger_rna):
         mito_peptide = messenger_rna[start:].translate(table=2, to_stop=True)
         peptides.append(mito_peptide)
     elif messenger_rna.find('AUA') != -1:
-        mito_peptide2 = messenger_rna[alt_start:].translate(table=2, to_stop=True)
+        mito_peptide2 = messenger_rna[alt_start:].translate(table=2,
+                                                            to_stop=True)
         peptides.append(mito_peptide2)
     peptides_list = sorted(peptides, key=len)
     for peptide in peptides_list:
